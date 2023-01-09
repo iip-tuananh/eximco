@@ -9,7 +9,7 @@
 @endsection
 @section('css')
     <style>
-        table tr:nth-child(1) {
+        table thead tr:nth-child(1) {
             background-color: #ea7a1f;
             color: #fff;
         }
@@ -34,7 +34,7 @@
                             <div class="col-12 px-0">
                                 <h1 class="h4 mb-3 entry-title text-justify text-dark">{{ $detail_project->name }}</h1>
                                 <div class="single-detail-meta my-3"> <span class="mr-3 mr-md-5"><i
-                                            class="fa fa-user mr-2 text-primary"></i>Admin</span> <span
+                                            class="fa fa-user mr-2 text-primary"></i>{{$setting->company}}</span> <span
                                         class="mr-3 mr-md-5"><i
                                             class="fas fa-calendar-alt mr-2 text-primary"></i>{{ date_format($detail_project->created_at, 'd/m/Y') }}</span>
                                 </div>

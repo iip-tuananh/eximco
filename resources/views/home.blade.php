@@ -249,9 +249,9 @@
                                     data-wow-duration=".8s"
                                     style="visibility: visible; animation-duration: 0.8s; animation-name: fadeIn;">
                                     <h3 class="h6 text-uppercase page-service__text mb-0"><a
-                                    href="{{route('serviceDetail',['slug'=>$servicehome[0]->slug])}}"
-                                    title="{{ $servicehome[0]->name }}" class="text-white"
-                                    data-wpel-link="internal">{{ $servicehome[0]->name }}</a></h3>
+                                    href="{{route('serviceDetail',['slug'=>$service->slug])}}"
+                                    title="{{ $service->name }}" class="text-white"
+                                    data-wpel-link="internal">{{ $service->name }}</a></h3>
                                 </div>
                                 @endif
                             </div>

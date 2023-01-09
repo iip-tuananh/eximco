@@ -68,7 +68,7 @@ P2
                    <div class="single-detail-content mb-4">
                        <div class="col-12 px-0">
                            <h1 class="h4 mb-3 entry-title text-justify text-dark">{{languageName($product->name)}}</h1>
-                           <div class="single-detail-meta my-3"> <span class="mr-3 mr-md-5"><i class="fa fa-user mr-2 text-primary"></i>Admin</span> <span class="mr-3 mr-md-5"><i class="fas fa-calendar-alt mr-2 text-primary"></i>29/12/2022</span>
+                           <div class="single-detail-meta my-3"> <span class="mr-3 mr-md-5"><i class="fa fa-user mr-2 text-primary"></i>{{$setting->company}}</span> <span class="mr-3 mr-md-5"><i class="fas fa-calendar-alt mr-2 text-primary"></i>29/12/2022</span>
                                <p class="mt-2"><span><span><a href="{{route('home')}}" data-wpel-link="internal">Trang Chủ</a> » <span><a href="{{route('allProduct')}}" data-wpel-link="internal">Mặt hàng nhập khẩu</a> » <strong class="breadcrumb_last" aria-current="page">{{languageName($product->name)}}</strong></span></span></span></p>
                            </div>
                            <div class="text-justify the-content">

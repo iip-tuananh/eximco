@@ -56,10 +56,11 @@
              <div class="page-menu-nav">
                 <nav class="navbar navbar-expand-lg p-0">
                 <ul id="menu-menu-chinh" class="navbar-nav d-none d-lg-flex">
-                   <li class="nav-item pr-3"><a class="text-white fa fa-2x fa-home" href="{{route('home')}}"
-                      title="" data-wpel-link="internal"></a></li>
-                   <li id="menu-item-7344"
-                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-7344 dropdown">
+                   <li id="menu-item-7330"
+                     class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-7330"><a
+                     href="{{route('home')}}"
+                     class="menu-item-link-class nav-link ">Trang chủ</a></li>
+                   <li id="menu-item-7344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-7344 dropdown">
                       <a
                       class="menu-item-link-class nav-link dropdown-toggle d-flex ">Về Chúng Tôi<i
                          class="fa fa-caret-down ml-1" aria-hidden="true"></i></a>

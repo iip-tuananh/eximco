@@ -26,7 +26,7 @@
                     <div class="single-detail-content mb-4">
                         <div class="col-12 px-0">
                             <h1 class="h4 mb-3 entry-title text-justify text-dark">{{languageName($blog_detail->title)}}</h1>
-                            <div class="single-detail-meta my-3"> <span class="mr-3 mr-md-5"><i class="fa fa-user mr-2 text-primary"></i>Admin</span> <span class="mr-3 mr-md-5"><i class="fas fa-calendar-alt mr-2 text-primary"></i>
+                            <div class="single-detail-meta my-3"> <span class="mr-3 mr-md-5"><i class="fa fa-user mr-2 text-primary"></i>{{$setting->company}}</span> <span class="mr-3 mr-md-5"><i class="fas fa-calendar-alt mr-2 text-primary"></i>
                                 {{date_format($blog_detail->created_at,'d/m/Y')}}
                             </span>
                                 <p class="mt-2"><span><span><a href="{{route('home')}}" data-wpel-link="internal">Trang Chủ</a> » <span><a href="{{route('allListBlog')}}" data-wpel-link="internal">Tin tức</a> » <strong class="breadcrumb_last" aria-current="page">{{languageName($blog_detail->title)}}</strong></span></span></span></p>
