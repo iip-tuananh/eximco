@@ -123,6 +123,13 @@
                 />
               </vs-select>
             </div>
+            <div class="form-group">
+              <label>Hiển thị nổi bật trang chủ</label>
+              <vs-select v-model="objData.home_status">
+                <vs-select-item value="1" text="Hiện" />
+                <vs-select-item value="0" text="Ẩn" />
+              </vs-select>
+            </div>
             <!-- <div class="form-group">
               <label>Loại danh mục</label>
               <vs-select

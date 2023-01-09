@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\models\Project;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function create(Request $request, Project $ser)
+    public function create(Request $request, Project $project)
     {
-        $data = $ser->saveProject($request);
+        $data = $project->saveProject($request);
+        dd($data);
         return response()->json([
             'message' => 'Save Success',
             'data'=> $data

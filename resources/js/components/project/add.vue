@@ -139,11 +139,6 @@ export default {
           },
         ],
         status: 1,
-        images: [],
-        location:"",
-        scale:"",
-        operate:"",
-        cdt:""
       },
     };
   },

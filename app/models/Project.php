@@ -13,7 +13,7 @@ class Project extends Model
         if($id != ""){
             $query = Project::where([
                 'id' => $id
-             ])->first();
+            ])->first();
             if ($query) {
                 $query->name = $request->name;
                 $query->slug = to_slug($request->name);
