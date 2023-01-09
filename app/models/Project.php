@@ -24,7 +24,6 @@ class Project extends Model
                 $query->operate = $request->operate;
                 $query->images = $request->images;
                 $query->status = $request->status;
-                $query->created_at = $request->created_at;
                 $query->save();
             }else{
                 $query = new Project();
@@ -37,7 +36,6 @@ class Project extends Model
                 $query->operate = $request->operate;
                 $query->images = $request->images;
                 $query->status = $request->status;
-                $query->created_at = $request->created_at;
                 $query->save();
             }
             
@@ -52,7 +50,6 @@ class Project extends Model
                 $query->operate = $request->operate;
                 $query->images = $request->images;
                 $query->status = $request->status;
-                $query->created_at = $request->created_at;
                 $query->save();
             
         }
