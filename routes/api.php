@@ -62,6 +62,7 @@ Route::group(['namespace'=>'Api','middleware'=>'auth:api'],function(){
 	});
 	Route::group(['prefix'=>'messcontact'], function(){
 		Route::post('list','AllController@listMesscontact');
+		Route::get('delete/{id}','AllController@deleteMesscontact');
 	});
 	Route::post('addLibrary','AllController@addLibrary');
 	Route::group(['prefix'=>'product', 'namespace'=>'Product'], function(){
@@ -89,6 +90,12 @@ Route::group(['namespace'=>'Api','middleware'=>'auth:api'],function(){
 			Route::get('edit/{id}','TypeTwoProductController@edit');
 			Route::get('findCateType/{cate_id}','TypeTwoProductController@findType');
 		});
+	});
+	Route::group(['prefix'=>'project','namspace'=>"Project"], function(){
+		Route::post('list','ProjectController@list');
+		Route::post('create','ProjectController@create');
+		Route::get('edit/{id}','ProjectController@edit');
+		Route::get('delete/{id}','ProjectController@delete');
 	});
 	Route::group(['prefix'=>'construction','namspace'=>"Construction"], function(){
 		Route::post('list','Construction\ConstructionController@list');

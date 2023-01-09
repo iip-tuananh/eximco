@@ -449,6 +449,30 @@ let _routers = [
                     requiresAuth: true,
                 }
             },
+            {
+                name: 'list_project',
+                path: '/project',
+                component: _import('project/list'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
+            {
+                name: 'add_project',
+                path: '/project/add',
+                component: _import('project/add'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
+            {
+                name: 'edit_project',
+                path: '/project/edit/:id',
+                component: _import('project/edit'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
 ];
 const router = new VueRouter({
     errorHandler(to, from, next, error) {

@@ -5,11 +5,11 @@
           <div class="card">
             <div class="card-body">
               <div class="form-group">
-                <label>Tên mẫu thiết kế</label>
+                <label>Tên mặt hàng</label>
                 <vs-input
                   type="text"
                   size="default"
-                  placeholder="Tên mẫu thiết kế"
+                  placeholder="Tên mặt hàng"
                   class="w-100"
                   v-model="objData.name[0].content"
                 />
@@ -27,7 +27,7 @@
                       v-if="index != 0"
                       type="text"
                       size="default"
-                      placeholder="Tên mẫu thiết kế"
+                      placeholder="Tên mặt hàng"
                       class="w-100 inputlang"
                       v-model="objData.name[index].content"
                     />
@@ -64,11 +64,11 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Ảnh mẫu thiết kế</label>
+                <label>Ảnh mặt hàng</label>
                 <ImageMulti v-model="objData.images" :title="'mau-thiet-ke'"/> 
               </div>
               <!-- <div class="form-group">
-                <label>Giá mẫu thiết kế</label>
+                <label>Giá mặt hàng</label>
                 <vs-input
                   type="number"
                   size="default"
@@ -100,8 +100,8 @@
                   <vs-select-item value="0" text="Ẩn" />
                 </vs-select>
               </div>
-              <div class="form-group">
-                <label>Danh mục mẫu thiết kế</label>
+              <!-- <div class="form-group">
+                <label>Danh mục mặt hàng</label>
                 <vs-select
                   class="selectExample"
                   v-model="objData.category"
@@ -119,7 +119,7 @@
                     :key="'f' + index"
                   />
                 </vs-select>
-              </div>
+              </div> -->
               <!-- <div class="form-group">
                 <label>Loại danh mục</label>
                 <vs-select
@@ -258,7 +258,7 @@ export default {
       if(this.objData.content[0].content == '') this.errors.push('Nội dung không được để trống');
       if(this.objData.description[0].content == '') this.errors.push('Mô tả không được để trống');
       if(this.objData.images.length == 0) this.errors.push('Vui lòng chọn ảnh');
-      if(this.objData.category == 0) this.errors.push('Chọn danh mục mẫu thiết kế');
+      if(this.objData.category == 0) this.errors.push('Chọn danh mục mặt hàng');
       if (this.errors.length > 0) {
         this.errors.forEach((value, key) => {
           this.$error(value);
@@ -271,7 +271,7 @@ export default {
           .then((response) => {
             this.loadings(false);
             this.$router.push({ name: "listProduct" });
-            this.$success("Thêm mẫu thiết kế thành công");
+            this.$success("Thêm mặt hàng thành công");
             this.$route.push({ name: "listProduct" });
           })
           .catch((error) => {
