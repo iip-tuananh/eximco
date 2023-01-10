@@ -1,5 +1,8 @@
 var Swipes = new Swiper('.swiper-container', {
     loop: true,
+    mousewheelControl: false,
+    direction: "horizontal",
+    slidesPerView: "auto",
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -14,8 +17,9 @@ $(document).ready(function() {
             slidesPerView: 4,
             centeredSlides: true,
             spaceBetween: 30,
+            mousewheelControl: false,
             loop: true,
-            loopedSlides: 7,
+            loopedSlides: 4,
             watchSlidesVisibility: true,
             autoplay: {
                 delay: 5000,
@@ -48,6 +52,7 @@ $(document).ready(function() {
 });
 var swiper = new Swiper('.swiper', {
     slidesPerView: 3,
+    mousewheelControl: false,
     centeredSlides: true,
     spaceBetween: 5,
     loop: true,

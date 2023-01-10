@@ -50,7 +50,9 @@
                             @csrf
                             <div id="apply-form" class="form-row justify-content-center">
                               <div class="col-auto">
-                                <input type="email" name="email" class="form-control mb-2" id="inlineFormInput" placeholder="Email">
+                                <div class="input-group mb-2">
+                                    <input type="email" name="email" class="form-control " id="inlineFormInput" placeholder="Email">
+                                </div>
                               </div>
                               <div class="col-auto">
                                 <div class="input-group mb-2">
@@ -58,7 +60,9 @@
                                 </div>
                               </div>
                               <div class="col-auto">
-                                <button id="apply-btn" type="submit" class="btn btn-primary mb-2" disabled>Đăng ký</button>
+                                <div class="input-group mb-2">
+                                    <button id="apply-btn" type="submit" class="btn btn-primary mb-2" disabled>Đăng ký</button>
+                                </div>
                               </div>
                             </div>
                           </form>

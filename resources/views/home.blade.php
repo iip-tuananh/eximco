@@ -70,7 +70,7 @@
             <div class="container">
                 <div class="page-heading wow fadeInDown" data-wow-duration="1.5s"
                     style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
-                    <h2 class="text-uppercase">xuất nhập khẩu đại dương</h2>
+                    <h2 class="text-uppercase">xuất nhập khẩu Eximco global</h2>
                 </div>
                 <div class="row">
                     <div class="col">

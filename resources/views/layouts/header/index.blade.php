@@ -1,6 +1,6 @@
 <header class="page-header">
     <div class="page-topbar py-1 py-sm-2">
-       <div class="container ml-2">
+       <div class="container">
           <div class="row">
           <div class="col-lg-6 col-md-8">
              <div class="page-topbar-left text-center text-md-left mb-2 mb-md-0 d-flex">
@@ -18,7 +18,7 @@
       <div class="container">
          <div class="d-flex align-items-center justify-content-between flex-column flex-md-row">
              <div class="page-menu-logo d-none d-lg-block">
-                 <a class="navbar-brand d-block mx-auto mx-md-0 page-logo mr-auto p-0" href="" title="{{$setting->company}}" data-wpel-link="internal">
+                 <a class="navbar-brand d-block mx-auto mx-md-0 page-logo mr-auto" href="" title="{{$setting->company}}" data-wpel-link="internal">
                   <img class="page-img-lap" src="{{$setting->logo}}" alt="" srcset="">
                  </a>
              </div>
@@ -143,7 +143,7 @@
     </div>
     <div class="page-menu-mobile js-menu d-block d-lg-none fixed-menu">
       <nav class="navbar navbar-expand-lg navbar-light ">
-         <a class="navbar-brand" href="#">
+         <a class="navbar-brand" href="{{route('home')}}">
             <img class="c-box-img" src="{{$setting->logo}}" alt="{{$setting->company}}">
          </a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
