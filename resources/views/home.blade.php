@@ -142,8 +142,8 @@
             </noscript>
             <img
                class="bg-why ls-is-cached lazyloaded"
-               src="{{asset('frontend/images/test2-01-2-scaled.jpg')}}"
-               data-src="{{asset('frontend/images/test2-01-2-scaled.jpg')}}"
+               src="{{asset('frontend/images/bannerHome.jpg')}}"
+               data-src="{{asset('frontend/images/bannerHome.jpg')}}"
                style="
                position: absolute;
                top: 0;

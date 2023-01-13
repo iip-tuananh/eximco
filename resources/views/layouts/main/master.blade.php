@@ -737,7 +737,7 @@
             @include('layouts.header.index')
             @yield('content')
             @include('layouts.footer.index')
-            <a class="res_none btn-zalo btn-frame" target="_blank" href="">
+            <a class="res_none btn-zalo btn-frame" target="_blank" href="https://zalo.me/{{$setting->phone1}}">
                 <div class="animated infinite zoomIn kenit-alo-circle"></div>
                 <div class="animated infinite pulse kenit-alo-circle-fill"></div>
                 <i><img src="{{ url('frontend/images/zl.png') }}" alt="Zalo"></i>
@@ -804,7 +804,7 @@
             border-radius: 100%;
             border: 2px solid rgba(7, 41, 103, 0.8);
             opacity: .1;
-            border-color: #45a8d9;
+            border-color: #FF8C00;
             opacity: .5;
         }
 
@@ -853,7 +853,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: #45a8d9;
+            background: #FF8C00;
             position: relative;
             z-index: 1;
         }

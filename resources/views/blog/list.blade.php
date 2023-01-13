@@ -86,7 +86,7 @@
                             @if ($setting->facebook !==null)
                                <div class="sidebar-item">
                                 <div class="card border-dark mb-3 mb-md-4">
-                                    <div class="card-header text-white bg-dark text-uppercase h6">Fanpage</div>
+                                    <div class="card-header text-white bg-primary text-uppercase h6">Fanpage</div>
                                     <div class="card-body text-dark p-2">
                                         <div class="fb-page" data-href="{{$setting->facebook}}"
                                             data-width="" data-height="" data-small-header="false"
