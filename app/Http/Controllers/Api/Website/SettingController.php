@@ -25,8 +25,9 @@ class SettingController extends Controller
         
 	    	$setting->webname = $request->webname;
 	    	$setting->company = $request->company;
-	    	$setting->address1 = $request->address1;
-	    	$setting->address2 = $request->address2;
+	    	$setting->address1 = json_encode($request->address1);
+	    	$setting->address2 = json_encode($request->address2);
+	    	$setting->address3 = json_encode($request->address3);
 	    	$setting->phone1 = $request->phone1;
 	    	$setting->phone2 = $request->phone2;
 	    	$setting->fax = $request->fax;
@@ -48,8 +49,9 @@ class SettingController extends Controller
         	$setting = Setting::find(1);
 	    	$setting->webname = $request->webname;
 	    	$setting->company = $request->company;
-	    	$setting->address1 = $request->address1;
-	    	$setting->address2 = $request->address2;
+	    	$setting->address1 = json_encode($request->address1);
+	    	$setting->address2 = json_encode($request->address2);
+	    	$setting->address3 = json_encode($request->address3);
 	    	$setting->phone1 = $request->phone1;
 	    	$setting->phone2 = $request->phone2;
 	    	$setting->fax = $request->fax;

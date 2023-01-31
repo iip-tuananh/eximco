@@ -4940,7 +4940,7 @@
       --breakpoint-md: 768px;
       --breakpoint-lg: 992px;
       --breakpoint-xl: 1200px;
-      --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --font-family-sans-serif: -apple-system,'Montserrat', sans-serif;
       --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
    }
 
@@ -4972,9 +4972,9 @@
 
    body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-family: -apple-system, 'Montserrat', sans-serif;
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1.5;
       color: #212529;
       text-align: left;
@@ -5289,7 +5289,7 @@
    h5,
    h6 {
       margin-bottom: .5rem;
-      font-weight: 500;
+      font-weight: 700;
       line-height: 1.2
    }
 
@@ -7249,7 +7249,7 @@
       height: calc(1.5em + .75rem + 2px);
       padding: .375rem .75rem;
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1.5;
       color: #495057;
       background-color: #fff;
@@ -12498,7 +12498,7 @@
 
    .d-flex {
       display: -ms-flexbox !important;
-      display: flex !important
+      display: flex !important;
    }
 
    .d-inline-flex {
@@ -12816,7 +12816,7 @@
 
    .justify-content-end {
       -ms-flex-pack: end !important;
-      justify-content: flex-end !important
+      justify-content: flex-end !important;
    }
 
    .justify-content-center {
@@ -28646,7 +28646,7 @@
    body {
       position: relative;
       font-size: 14px;
-      color: #333;
+      color: #000;
       overflow-x: hidden
    }
 
@@ -28933,8 +28933,8 @@
       cursor: pointer;
       color: #fff;
       text-transform: uppercase;
-      padding: .5rem 1rem;
-      font-weight: 400;
+      padding: .5rem 2rem;
+      font-weight: 700;
       position: relative;
       font-size: .875rem;
       display: -webkit-box;
@@ -29073,7 +29073,7 @@
 
    .page-promo__item p {
       font-size: 15px;
-      font-weight: 400
+      font-weight: 700;
    }
 
    .page-introduce__link {
@@ -29343,7 +29343,7 @@
 
    .page-footer:before,
    .page-footer:after {
-      z-index: 100;
+      z-index: 99;
       position: absolute;
       content: "";
       background: #fff
@@ -29366,7 +29366,7 @@
    }
 
    .page-footer__header {
-      font-weight: 500;
+      font-weight: 700;
       font-size: 18px;
       text-transform: uppercase;
       color: #fff;
@@ -29403,7 +29403,7 @@
 
    .copy-right {
       padding: 0 16px;
-      font-weight: 300;
+      font-weight: 700;
       background: #fff;
       color: #fff;
       background: #FFA500;
@@ -29463,7 +29463,7 @@
       color: #fff;
       letter-spacing: 2px;
       font-size: 30px;
-      font-weight: 300
+      font-weight: 700;
    }
 
    .archive-product .product-list a {
@@ -30221,7 +30221,7 @@
       padding: .5em 2em;
       color: #fff;
       border-radius: 30px;
-      font-weight: 500;
+      font-weight: 700;
       /* background-color:  #FF8C00; */
       background-image: linear-gradient(to right, #FF8C00, #FF8C00);
    }
@@ -30239,7 +30239,7 @@
 
    .box-body .desc {
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 700;
       text-transform: uppercase;
       margin-bottom: 15px
    }
@@ -31758,8 +31758,8 @@ width: 360px;
    .nav-link{
       padding: 0px;
       font-size: 15px;
-      font-weight: 200;
-      color: #000 ;
+      font-weight: 700;
+      color: #000;
       text-transform: uppercase;
       -webkit-transition: .4s;
       transition: .4s;
@@ -31776,24 +31776,24 @@ width: 360px;
   }
   .dropdown-item{
    font-size: 13px;
-   font-weight: 200;
+   font-weight: 700;
    text-transform: uppercase;
   }
  }
  .page-footer__address {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 18px;
     text-transform: uppercase;
     color: #fff;
     position: relative;
-    padding-left: 20px;
+    padding-left: 56px;
 }
 .page-footer__address:before {
    content: '';
    position: absolute;
    top: 10px;
    left: 0;
-   width: 15px;
+   width: 40px;
    height: 2px;
    background: #fff;
 }
@@ -31811,4 +31811,31 @@ width: 360px;
    .btn-gradient{
       width: 100% !important;
    }
+   .contact-group-order {
+      display: flex;
+      flex-direction: column;
+   }
+   .order-first-show {
+      order: 1;
+   }
+   .order-second-show {
+      order: 2;
+   }
+}
+.contact-page_title:before {
+   content: '';
+   position: absolute;
+   top: 10px;
+   left: 0;
+   width: 40px;
+   height: 2px;
+   background-color: #000;
+}
+.contact-page_title {
+   font-weight: 700;
+   font-size: 18px;
+   text-transform: uppercase;
+   color: #000;
+   position: relative;
+   padding-left: 56px;
 }

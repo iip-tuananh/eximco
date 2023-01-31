@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/d3f77edfc2.js" crossorigin="anonymous"></script>
     <script type="text/javascript" async="" src="{{ asset('frontend/js/analytics.js') }}"></script>
-    <script>
+    {{-- <script>
         ! function(w, d, t) {
             w.TiktokAnalyticsObject = t;
             var ttq = w[t] = w[t] || [];
@@ -56,7 +56,7 @@
             ttq.load('CDCDA03C77U1JEFR5HPG');
             ttq.page();
         }(window, document, 'ttq');
-    </script>
+    </script> --}}
     <link rel='stylesheet' id='popup-maker-site-css' href='{{ asset('frontend/css/autoptimize_single_cb.css') }}'
         type='text/css' media='all' />
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/fujkm.css') }}" media="all">
@@ -65,11 +65,8 @@
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet"
         id="aHR0cHM6Ly9jcm0uYml6Zmx5LnZuL2JpemZseS1jbGllbnQvc3R5bGUuY3NzP3Zlcj0z" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/aml-widget.min.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&amp;display=swap">
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
-  />
+    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&amp;display=swap"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <style type="text/css"
         data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">
         .fb_hidden {
@@ -932,124 +929,6 @@
     </script>
     <script type="text/javascript" defer="defer" src="{{ asset('frontend/js/wow.min.js') }}" id="wow-js"></script>
     <script type="text/javascript" defer="defer" src="{{ asset('frontend/js/main.js') }}" id="main-js"></script>
-    <script type="text/javascript" id="heateor_sss_sharing_js-js-before">
-        function heateorSssLoadEvent(e) {
-            var t = window.onload;
-            if (typeof window.onload != "function") {
-                window.onload = e
-            } else {
-                window.onload = function() {
-                    t();
-                    e()
-                }
-            }
-        };
-        var heateorSssSharingAjaxUrl = 'https://nhapkhautrungquoc.vn/wp-admin/admin-ajax.php',
-            heateorSssCloseIconPath =
-            'https://nhapkhautrungquoc.vn/wp-content/plugins/sassy-social-share/public/../images/close.png',
-            heateorSssPluginIconPath =
-            'https://nhapkhautrungquoc.vn/wp-content/plugins/sassy-social-share/public/../images/logo.png',
-            heateorSssHorizontalSharingCountEnable = 0,
-            heateorSssVerticalSharingCountEnable = 0,
-            heateorSssSharingOffset = -10;
-        var heateorSssMobileStickySharingEnabled = 0;
-        var heateorSssCopyLinkMessage = "Link copied.";
-        var heateorSssUrlCountFetched = [],
-            heateorSssSharesText = 'Shares',
-            heateorSssShareText = 'Share';
-
-        function heateorSssPopup(e) {
-            window.open(e, "popUpWindow",
-                "height=400,width=600,left=400,top=100,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status"
-            )
-        }
-    </script>
-    <script type="text/javascript" defer="defer" src="{{ asset('frontend/js/sassy-social-share-public.js') }}"
-        id="heateor_sss_sharing_js-js"></script>
-    <script type="text/javascript" id="popup-maker-site-js-extra">
-        var pum_vars = {
-            "version": "1.17.1",
-            "pm_dir_url": "https:\/\/nhapkhautrungquoc.vn\/wp-content\/plugins\/popup-maker\/",
-            "ajaxurl": "https:\/\/nhapkhautrungquoc.vn\/wp-admin\/admin-ajax.php",
-            "restapi": "https:\/\/nhapkhautrungquoc.vn\/wp-json\/pum\/v1",
-            "rest_nonce": null,
-            "default_theme": "10421",
-            "debug_mode": "",
-            "disable_tracking": "",
-            "home_url": "\/",
-            "message_position": "top",
-            "core_sub_forms_enabled": "1",
-            "popups": [],
-            "analytics_route": "analytics",
-            "analytics_api": "https:\/\/nhapkhautrungquoc.vn\/wp-json\/pum\/v1"
-        };
-        var pum_sub_vars = {
-            "ajaxurl": "https:\/\/nhapkhautrungquoc.vn\/wp-admin\/admin-ajax.php",
-            "message_position": "top"
-        };
-        var pum_popups = {
-            "pum-10452": {
-                "triggers": [{
-                    "type": "auto_open",
-                    "settings": {
-                        "cookie_name": ["pum-10452"],
-                        "delay": 2000
-                    }
-                }],
-                "cookies": [{
-                    "event": "on_popup_close",
-                    "settings": {
-                        "name": "pum-10452",
-                        "key": "",
-                        "session": false,
-                        "path": "1",
-                        "time": "1 month"
-                    }
-                }],
-                "disable_on_mobile": false,
-                "disable_on_tablet": false,
-                "atc_promotion": null,
-                "explain": null,
-                "type_section": null,
-                "theme_id": "10429",
-                "size": "small",
-                "responsive_min_width": "0%",
-                "responsive_max_width": "100%",
-                "custom_width": "640px",
-                "custom_height_auto": false,
-                "custom_height": "380px",
-                "scrollable_content": false,
-                "animation_type": "fade",
-                "animation_speed": "350",
-                "animation_origin": "center top",
-                "open_sound": "none",
-                "custom_sound": "",
-                "location": "center",
-                "position_top": "100",
-                "position_bottom": "0",
-                "position_left": "0",
-                "position_right": "0",
-                "position_from_trigger": false,
-                "position_fixed": false,
-                "overlay_disabled": false,
-                "stackable": false,
-                "disable_reposition": false,
-                "zindex": "1999999999",
-                "close_button_delay": "0",
-                "fi_promotion": null,
-                "close_on_form_submission": false,
-                "close_on_form_submission_delay": "0",
-                "close_on_overlay_click": true,
-                "close_on_esc_press": false,
-                "close_on_f4_press": false,
-                "disable_form_reopen": false,
-                "disable_accessibility": false,
-                "theme_slug": "content-only",
-                "id": 10452,
-                "slug": "tb-tet-2023-3"
-            }
-        };
-    </script>
     <script type="text/javascript" defer="defer" src="{{ asset('frontend/js/pum-site-scripts.js') }}"
         id="popup-maker-site-js"></script>
     <script type="text/javascript" defer="defer" src="{{ asset('frontend/js/smush-lazy-load.min.js') }}"
@@ -1060,9 +939,6 @@
     </script>
     <div class="mm-wrapper__blocker mm-slideout"><a href="#mm-0"><span class="mm-sronly">Close menu</span></a>
     </div>
-
-    <iframe rel="nofollow" id="max-lead-iframe-tracking" style="display:none;"
-        src="https://cdn.autoads.asia/maxlead//themes/tracking/index.html?origin=aHR0cHM6Ly9uaGFwa2hhdXRydW5ncXVvYy52bg==&amp;url=aHR0cHM6Ly9uaGFwa2hhdXRydW5ncXVvYy52bi8=&amp;websiteId=91807&amp;uid=&amp;hasLead=false"></iframe>
     <div
         style="position: absolute; bottom: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden; visibility: hidden;">
         <iframe

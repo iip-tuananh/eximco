@@ -7,71 +7,87 @@
          <div class="row">
          <div class="col-lg-3">
             <div class="page-footer-info mb-4 mb-lg-0">
-               <h4 class="mb-3 page-footer__header">giới thiệu</h4>
-               <p class="mb-2 mb-md-3">{{$setting->company}}
-                  <br> Hotline khiếu nại: {{$setting->phone1}}</p>
-               <p class="mb-2 mb-md-3"><i class="fa fa-home mr-2"></i>Văn Phòng: {{$setting->address1}}</p>
-               @if ($setting->address2 == null)
-                   
-               @else
-               <p class="mb-2 mb-md-3"><i class="fa fa-home mr-2"></i>Văn Phòng 2: {{$setting->address2}}</p>
-               @endif
+               <h4 class="mb-3 page-footer__header">Tại Hà Nội</h4>
+                  @foreach (json_decode($setting->address1) as $item)
+                  @if ($item->name != "")
+                     <p class="mb-2 mb-md-3">{{$item->name}}</p>
+                  @endif
+                  @if ($item->name_code != "")
+                     <p class="mb-2 mb-md-3">Mã code : {{$item->name}}</p>
+                  @endif
+                  <p class="mb-2 mb-md-3">
+                     @if ($item->address != "")
+                     <i class="fa fa-home mr-2"></i>Văn Phòng: {{$item->address}}<br>
+                     @endif
+                     @if ($item->phone_number != "")
+                     <i class="fa fa-phone mr-2"></i>Hotline : {{$item->phone_number}}
+                     @endif
+                  </p>
+                  @endforeach
             </div>
             <div class="page-footer-info mb-4 mb-lg-0">
-               <h4 class="mb-3 page-footer__header">liên hệ</h4>
-               <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline : {{$setting->phone1}}</p>
-               @if ($setting->phone2 == null)
-                   
-               @else
-               <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline 2: {{$setting->phone2}}</p>
-               @endif
-               @if ($setting->email == null)
-                   
-               @else
-               <p class="mb-2 mb-md-3"><i class="fa fa-envelope mr-2"></i>Email: {{$setting->email}}
-               </p>
-               @endif
-               <p class="mb-2 mb-md-3"><i class="fa fa-clock mr-2"></i>Giờ Làm Việc: 8:00-11:30 &amp; 13:30-17:00 Thứ
-               2 - Thứ 7</p>
+               <h4 class="mb-3 page-footer__header">Tại Quảng Châu, Trung Quốc</h4>
+               @foreach (json_decode($setting->address2) as $item)
+                  @if ($item->name != "")
+                     <p class="mb-2 mb-md-3">
+                        {{$item->name}}
+                     </p>
+                  @endif
+                  @if ($item->name_code != "")
+                     <p class="mb-2 mb-md-3">
+                        收货名： {{$item->name_code}}
+                     </p>
+                  @endif
+                  @if ($item->phone_number != "")
+                     <p class="mb-2 mb-md-3">
+                        电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
+                     </p>
+                  @endif
+                  @if ($item->address != "")
+                     <p class="mb-2 mb-md-3">
+                        收货地址：{{$item->address}}
+                     </p>
+                  @endif
+                  @if ($item->note != "")
+                     <p class="mb-2 mb-md-3">
+                        请标注外箱大写: {{$item->note}}
+                     </p>
+                  @endif
+               @endforeach
             </div>
          </div>
          <div class="col-lg-3">
             <div class="mb-4 mb-lg-0">
-               <h5 class="mb-3 page-footer__address">
-                  Tại Bằng Tường,Trung Quốc
-               </h5>
-               <p class="mb-2 mb-md-3">
-                  1. Kho hàng LTL Pallet
-               </p>
-               <p class="mb-2 mb-md-3">
-                  收货名： 阮升-Eximco
-               </p>
-               <p class="mb-2 mb-md-3">
-                  电话 : <a href="tel:18077189730"> 18077189730 </a>
-               </p>
-               <p class="mb-2 mb-md-3">
-                  收货地址：广西-崇左市-凭祥市-凭祥市-南山实验学校对面-海昌仓库-阮升Eximco
-               </p>
-               <p class="mb-2 mb-md-3">
-                  请标注外箱大写: 阮升-Eximco
-               </p>
-            </div>
-            <div class="mb-4 mb-lg-0">
-               <p class="mb-2 mb-md-3">
-                  2. Kho hàng LTL
-               </p>
-               <p class="mb-2 mb-md-3">
-                  收货名： 海青-Koy-Eximco
-               </p>
-               <p class="mb-2 mb-md-3">
-                  电话 : <a href="tel:13557970830"> 13557970830 </a>
-               </p>
-               <p class="mb-2 mb-md-3">
-                  收货地址：广西-崇左市-凭祥市-凭祥市-南山实验学校对面-海昌仓库-海青-Koy-Eximco
-               </p>
-               <p class="mb-2 mb-md-3">
-                  请标注外箱大写: 海青-Koy-Eximco
-               </p>
+               <h4 class="mb-3 page-footer__address">
+                  Tại Bằng Tường, Trung Quốc
+               </h4>
+               @foreach (json_decode($setting->address3) as $item)
+                  @if ($item->name != "")
+                     <p class="mb-2 mb-md-3">
+                        {{$item->name}}
+                     </p>
+                  @endif
+                  @if ($item->name_code != "")
+                     <p class="mb-2 mb-md-3">
+                        收货名： {{$item->name_code}}
+                     </p>
+                  @endif
+                  @if ($item->phone_number != "")
+                     <p class="mb-2 mb-md-3">
+                        电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
+                     </p>
+                  @endif
+                  @if ($item->address != "")
+                     <p class="mb-2 mb-md-3">
+                        收货地址：{{$item->address}}
+                     </p>
+                  @endif
+                  @if ($item->note != "")
+                     <p class="mb-2 mb-md-3">
+                        请标注外箱大写: {{$item->note}}
+                     </p>
+                  @endif
+               @endforeach
             </div>
          </div> 
          <div class="col-lg-3 mt-3 mt-md-0">
@@ -82,9 +98,24 @@
                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                </div>
             @endif
+            <div class="page-footer-info mb-4 mb-lg-0">
+               <h4 class="mb-3 page-footer__header">Liên hệ</h4>
+               @if ($setting->phone1)
+               <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline : <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></p>
+               @endif
+               @if ($setting->phone2)
+               <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline 2: <a href="tel:{{$setting->phone2}}">{{$setting->phone2}}</a></p>
+               @endif
+               @if ($setting->email)
+               <p class="mb-2 mb-md-3"><i class="fa fa-envelope mr-2"></i>Email: <a href="mailto:{{$setting->email}}">{{$setting->email}}</a>
+               </p>
+               @endif
+               <p class="mb-2 mb-md-3"><i class="fa fa-clock mr-2"></i>Giờ Làm Việc: 8:00-11:30 &amp; 13:30-17:00 Thứ
+               2 - Thứ 7</p>
+            </div>
          </div>
          <div class="col-lg-3 mt-3 mt-md-0">
-            <h4 class="mb-4 page-footer__header">bản đồ</h4>
+            <h4 class="mb-4 page-footer__header">Bản đồ</h4>
             {!!$setting->iframe_map!!}
          </div>
 
@@ -95,14 +126,14 @@
 <div class="copy-right">
    <div class="container">
       <div class="row">
-         <div class="col-12"><a class="fanpage" href="h/" target="_blank"
+         <div class="col-12"><a class="fanpage" target="_blank"
             title="fanpage image" rel="nofollow noopener external noreferrer" data-wpel-link="external"> &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
          <p class="mb-0 text-center text-white"><a class="fanpage"
                href="javascript:void(0)"  title="fanpage image"
                rel="nofollow noopener external noreferrer" data-wpel-link="external">Copyright {{date ('Y')}} by </a><a
                class="text-white text-uppercase" href="javascript:void(0)" title="home">{{$setting->company}}</a>.
-               Design by <a class="text-white" href="" title=""
+               Design by <a class="text-white" href="https://sbtsoftware.vn/" title="SBT"
                data-wpel-link="internal">SBT Software.</a></p>
          </div>
       </div>

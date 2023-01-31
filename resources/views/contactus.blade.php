@@ -14,7 +14,7 @@
 @endsection
 @section('content')
 <main id="page-content">
-	<nav class="site-breadcrumb  bg-contact" aria-label="breadcrumb" style="background-image: url({{asset('frontend/images/bg-breadcrumb.jpg')}})">
+	<nav class="site-breadcrumb  bg-contact" aria-label="breadcrumb" style="background-image: url({{url('frontend/images/bg-breadcrumb.jpg')}})">
 		<div class="container">
 			<h2 class="text-uppercase">Liên hệ<span class="text-truncate"> chúng tôi</span></h2>
 		</div>
@@ -38,19 +38,19 @@
 									data-src="{{asset('frontend/images/contact-img.png')}}" class="img-w100 lazyloaded"></div>
 							<div class="box-body">
 								<div class="contact-form-title">Liên hệ với {{$setting->company}}</div>
-								<div class="desc text-uppercase"> Công Ty Cổ Phần Xuất Nhập Khẩu {{$setting->company}}</div>
-								<ul>
-									<li> <span class="box-icon"> <i class="fa fa-map-marked-alt"></i>
-										</span> <span>Văn phòng : {{$setting->address1}}</span></li>
-										@if ($setting->address2 !== null)
-										<li> <span class="box-icon"> <i class="fa fa-building"></i> </span>
-											<span>Văn Phòng 2 : {{$setting->address2}}</span>
-										</li>
+								<div class="desc text-uppercase">{{$setting->webname}}</div>
+								<ul class="mb-3">
+									<h4 class="contact-page_title">Tại Hà Nội</h4>
+									@foreach (json_decode($setting->address1) as $item)
+										@if ($item->address != "")
+										<li> <span class="box-icon"> <i class="fa fa-map-marked-alt"></i>
+										</span> <span>Văn phòng : {{$item->address}}</span></li>
 										@endif
+									@endforeach
 									<li> <span class="box-icon"> <i class="fa fa-phone-alt"></i> </span>
-										<span>Hotline : {{$setting->phone1}} 
-											@if ($setting->phone2 !== null)
-											<br> Hotline 2 : {{$setting->phone2}} <br>
+										<span>Hotline : <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a> 
+											@if ($setting->phone2)
+											<br> Hotline 2 : <a href="tel:{{$setting->phone2}}">{{$setting->phone2}}</a><br>
 											@endif
 										</span>
 									</li>
@@ -62,11 +62,41 @@
 											7</span>
 									</li>
 								</ul>
+								<ul>
+									<h4 class="contact-page_title">Tại Bẳng Tường, Trung Quốc</h4>
+									@foreach (json_decode($setting->address3) as $item)
+										@if ($item->name != "")
+											<p class="mb-2 mb-md-3">
+												{{$item->name}}
+											</p>
+										@endif
+										@if ($item->name_code != "")
+											<p class="mb-2 mb-md-3">
+												收货名： {{$item->name_code}}
+											</p>
+										@endif
+										@if ($item->phone_number != "")
+											<p class="mb-2 mb-md-3">
+												电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
+											</p>
+										@endif
+										@if ($item->address != "")
+											<p class="mb-2 mb-md-3">
+												收货地址：{{$item->address}}
+											</p>
+										@endif
+										@if ($item->note != "")
+											<p class="mb-2 mb-md-3">
+												请标注外箱大写: {{$item->note}}
+											</p>
+										@endif
+									@endforeach
+								</ul>
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-12 col-lg-6 mt-4 mt-lg-0">
-						<div class="right">
+					<div class="col-12 col-md-12 col-lg-6 mt-4 mt-lg-0 contact-group-order">
+						<div class="right order-second-show mb-5">
 							<div class="contact-form">
 								<div class="contact-form-title">Gửi tin nhắn đến chúng tôi</div>
 								<div role="form" class="wpcf7" id="wpcf7-f8499-o1" lang="vi" dir="ltr">
@@ -76,20 +106,65 @@
 									</div>
 									<form action="{{route('postcontact')}}" method="POST" class="wpcf7-form init" novalidate="novalidate" data-status="init">
 										@csrf
-										<div style="display: none;"> <input type="hidden" name="_wpcf7" value="8499"> <input type="hidden" name="_wpcf7_version" value="5.5.3"> <input type="hidden" name="_wpcf7_locale" value="vi"> <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f8499-o1"> <input type="hidden" name="_wpcf7_container_post" value="0"> <input type="hidden" name="_wpcf7_posted_data_hash" value=""></div>
-										<div class="form-group"><span class="wpcf7-form-control-wrap your-name"><input type="text" name="name" value="" size="40" class="control-inputs wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Nhập họ tên *"></span></div>
-										<div class="form-group"><span class="wpcf7-form-control-wrap your-phone"><input type="tel" required name="phone" value="" class="control-inputs wpcf7-form-control wpcf7-number wpcf7-validates-as-required wpcf7-validates-as-number form-control" aria-required="true" aria-invalid="false" placeholder="Số điện thoại *"></span></div>
-										<div class="form-group"><span class="wpcf7-form-control-wrap your-email"><input type="text" name="email" value="" size="40" class="control-inputs wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Email"></span></div>
-										<div class="form-group"><span class="wpcf7-form-control-wrap your-note">
+										<div class="form-group">
+											<span class="wpcf7-form-control-wrap your-name">
+												<input type="text" name="name" value="" size="40" class="control-inputs wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Nhập họ tên *">
+											</span>
+										</div>
+										<div class="form-group">
+											<span class="wpcf7-form-control-wrap your-phone">
+												<input type="tel" required name="phone" value="" class="control-inputs wpcf7-form-control wpcf7-number wpcf7-validates-as-required wpcf7-validates-as-number form-control" aria-required="true" aria-invalid="false" placeholder="Số điện thoại *">
+											</span>
+										</div>
+										<div class="form-group">
+											<span class="wpcf7-form-control-wrap your-email">
+												<input type="text" name="email" value="" size="40" class="control-inputs wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Email">
+											</span>
+										</div>
+										<div class="form-group">
+											<span class="wpcf7-form-control-wrap your-note">
 												<textarea name="mess" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea form-control control-inputs" aria-invalid="false" placeholder="Nội dung"></textarea>
-											</span></div>
-										<div class="box-button text-center"><input disabled id="contact-btn" type="submit" value="Gửi tin nhắn" class="wpcf7-form-control has-spinner wpcf7-submit btn btn-gradient">
+											</span>
+										</div>
+										<div class="box-button text-center">
+											<input disabled id="contact-btn" type="submit" value="Gửi tin nhắn" class="wpcf7-form-control has-spinner wpcf7-submit btn btn-gradient">
+										</div>
 									</form>
 								</div>
 								<div class="contact-map mt-3">
 									{!!$setting->iframe_map!!}
 								</div>
 							</div>
+						</div>
+						<div class="order-first-show">
+							<h4 class="contact-page_title">Tại Quảng Châu, Trung Quốc</h4>
+							@foreach (json_decode($setting->address2) as $item)
+								@if ($item->name != "")
+									<p class="mb-2 mb-md-3">
+										{{$item->name}}
+									</p>
+								@endif
+								@if ($item->name_code != "")
+									<p class="mb-2 mb-md-3">
+										收货名： {{$item->name_code}}
+									</p>
+								@endif
+								@if ($item->phone_number != "")
+									<p class="mb-2 mb-md-3">
+										电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
+									</p>
+								@endif
+								@if ($item->address != "")
+									<p class="mb-2 mb-md-3">
+										收货地址：{{$item->address}}
+									</p>
+								@endif
+								@if ($item->note != "")
+									<p class="mb-2 mb-md-3">
+										请标注外箱大写: {{$item->note}}
+									</p>
+								@endif
+							@endforeach
 						</div>
 					</div>
 				</div>

@@ -317,7 +317,7 @@ export default {
                   }
         }else{
           this.objData = response.data;
-           this.objData.content = JSON.parse(response.data.content);
+          this.objData.content = JSON.parse(response.data.content);
           this.objData.description = JSON.parse(response.data.description);
           this.objData.title = JSON.parse(response.data.title);
         }

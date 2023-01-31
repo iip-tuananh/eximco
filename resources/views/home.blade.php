@@ -360,15 +360,18 @@
                                                     src="{{$review->avatar}}"
                                                     data-src="{{$review->avatar}}"
                                                     alt="partner img"> </a></div>
-                                    <div class="page-testimonial__text"> <a target="_self" href="javascript:void(0)"
+                                    <div class="page-testimonial__text"> 
+                                        <a target="_self" href="javascript:void(0)"
                                             title="play" rel="nofollow noopener" data-wpel-link="internal">{{languageName($review->name)}}:
-                                            {!!languageName($review->content)!!} </a></div>
+                                            <span style="font-size: 14px;">{!!languageName($review->content)!!}</span> 
+                                        </a>
+                                    </div>
                                 </div>
                             </div>  
                         </div>
                         @endforeach
                     </div>
-                  </div>
+                </div>
             </div>
         </section>  
         @endif
@@ -526,14 +529,6 @@
                                 <form action="{{route('postcontact')}}" method="POST" class="wpcf7-form init"
                                     novalidate="novalidate" data-status="init">
                                     @csrf
-                                    <div style="display: none;"> <input type="hidden" name="_wpcf7"
-                                            value="6743"> <input type="hidden" name="_wpcf7_version"
-                                            value="5.5.3"> <input type="hidden" name="_wpcf7_locale"
-                                            value="vi">
-                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f6743-o2"> <input
-                                            type="hidden" name="_wpcf7_container_post" value="0"> <input
-                                            type="hidden" name="_wpcf7_posted_data_hash" value="">
-                                    </div>
                                     <div class="home-contact__content">
                                         <div class="page-heading">
                                             <h2 class="text-uppercase">Yêu cầu báo giá</h2>
@@ -572,13 +567,15 @@
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <div class="form-group"> <span
-                                                        class="wpcf7-form-control-wrap your-subject"><input
+                                                <div class="form-group"> 
+                                                    <span class="wpcf7-form-control-wrap your-subject"><input
                                                             type="text" name="mess" value=""
                                                             size="40"
                                                             class="wpcf7-form-control wpcf7-text form-control"
                                                             aria-invalid="false"
-                                                            placeholder="Thông tin cần báo giá"></span></div>
+                                                            placeholder="Thông tin cần báo giá">
+                                                    </span>
+                                                </div>
                                             </div>
                                             <div class="col-12"> <button class="btn btn-gradient w-100"
                                                     type="submit">Gửi</button></div>
