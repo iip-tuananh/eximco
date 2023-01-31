@@ -98,7 +98,7 @@
                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                </div>
             @endif
-            <div class="page-footer-info mb-4 mb-lg-0">
+            <div class="page-footer-info mb-4 mt-4 mb-lg-0">
                <h4 class="mb-3 page-footer__header">Liên hệ</h4>
                @if ($setting->phone1)
                <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline : <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></p>
