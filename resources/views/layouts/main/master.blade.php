@@ -66,6 +66,9 @@
         id="aHR0cHM6Ly9jcm0uYml6Zmx5LnZuL2JpemZseS1jbGllbnQvc3R5bGUuY3NzP3Zlcj0z" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend/css/aml-widget.min.css') }}">
     {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&amp;display=swap"> --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
     <style type="text/css"
         data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">
