@@ -592,4 +592,64 @@
             </div>
         </section>
     </main>
+    @if ($setting->statusPopup == 1)
+    <div class="modal-contact">
+        <div class="modal-contact-content">
+            <img src="{{url($setting->popupimage)}}" alt="show-popup">
+        </div>
+    </div>
+    @endif
+    
+    <style>
+        @media only screen and (max-width: 768px) {
+            .modal-contact {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            padding-top: 120px;
+            padding-left: 0;
+            padding-right: 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgb(0 0 0 / 52%);
+            }
+            .modal-contact-content {
+                background-color: #f1f1f1;
+                margin: auto;
+                border: 1px solid #fff;
+                width: 90%;
+            }
+        }
+        @media only screen and (min-width: 768px) {
+            .modal-contact {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            padding-top: 120px;
+            padding-left: 180px;
+            padding-right: 180px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgb(0 0 0 / 52%);
+            }
+            .modal-contact-content {
+                background-color: #f1f1f1;
+                margin: auto;
+                border: 1px solid #fff;
+                width: 60%;
+            }
+        }
+        .modal-contact-content img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 @endsection

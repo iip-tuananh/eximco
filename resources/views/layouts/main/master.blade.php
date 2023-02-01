@@ -966,6 +966,30 @@
         })
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script>
+        function windowShow()
+        {
+            $('.modal-contact').show();
+            $('html body').css('overflow', 'hidden');
+            setTimeout(windowHide, 20000);
+        }
+        function windowHide()
+        {
+            $('.modal-contact').hide();
+        }
+        setTimeout(windowShow, 2000);
+        $(document).ready(function () {
+            var modal = $('.modal-contact');
+            $('.close-contact').click(function () {
+            modal.hide();
+            });
+            $(window).on('click', function (e) {
+            if ($(e.target).is('.modal-contact')) {
+                modal.hide();
+            }
+            });
+        });
+    </script>
 </body>
 
 </html>
