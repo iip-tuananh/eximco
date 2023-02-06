@@ -1,4 +1,4 @@
-@extends('layouts.main.master')
+a@extends('layouts.main.master')
 @section('title')
     {{ $setting->company }}
 @endsection
@@ -595,7 +595,9 @@
     @if ($setting->statusPopup == 1)
     <div class="modal-contact">
         <div class="modal-contact-content">
-            <img src="{{url($setting->popupimage)}}" alt="show-popup">
+            <a href="{{$setting->linkpopup}}">
+                <img src="{{url($setting->popupimage)}}" alt="show-popup">
+            </a>
         </div>
     </div>
     @endif
