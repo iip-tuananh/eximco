@@ -1,4 +1,4 @@
-a@extends('layouts.main.master')
+@extends('layouts.main.master')
 @section('title')
     {{ $setting->company }}
 @endsection
