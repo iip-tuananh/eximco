@@ -5,10 +5,8 @@
           <div class="card">
             <div class="card-body">
               <div class="row">
-                <div class="col-md-3"><h4 class="card-title">Sửa danh mục mẫu thiết kế</h4></div>
+                <div class="col-md-6"><h4 class="card-title">Sửa danh mục mặt hàng</h4></div>
                 <div class="col-md-6"></div>
-                <div class="col-md-3">
-                  </div>
               </div>
               <!-- <p class="card-description">Basic form elements</p> -->
               <form class="forms-sample">
@@ -28,14 +26,14 @@
                     :title="'danh-muc'"
                   ></image-upload>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Ảnh breadcrumb</label>
                   <image-upload
                     v-model="objData.imagehome"
                     type="avatar"
                     :title="'breadcrumb-'"
                   ></image-upload>
-                </div>
+                </div> -->
                 <!-- <div class="form-group">
                     <label>Mô tả</label>
                     <vs-textarea v-model="objData.description" />
@@ -55,7 +53,7 @@
                         </vs-select>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <!-- <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputName1">Hiển thị trang chủ</label>
                       <vs-select v-model="objData.home_status"
@@ -64,7 +62,7 @@
                           <vs-select-item  value="0" text="Ẩn" />
                         </vs-select>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </form>
             </div>

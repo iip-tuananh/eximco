@@ -5,10 +5,8 @@
           <div class="card">
             <div class="card-body">
               <div class="row">
-                <div class="col-md-3"><h4 class="card-title">Thêm mới danh mục mẫu thiết kế</h4></div>
+                <div class="col-md-6"><h4 class="card-title">Thêm mới danh mục mặt hàng</h4></div>
                 <div class="col-md-6"></div>
-                <div class="col-md-3">
-                  </div>
               </div>
               <!-- <p class="card-description">Basic form elements</p> -->
               <form class="forms-sample">
@@ -27,7 +25,7 @@
                           v-if="index != 0"
                           type="text"
                           size="default"
-                          placeholder="Tên mẫu thiết kế"
+                          placeholder="Tên mặt hàng"
                           class="w-100 inputlang"
                           v-model="objData.name[index].content"
                         />
@@ -42,14 +40,14 @@
                     :title="'danh-muc'"
                   ></image-upload>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Ảnh breadcrumb</label>
                   <image-upload
                     v-model="objData.imagehome"
                     type="avatar"
                     :title="'breadcrumb'"
                   ></image-upload>
-                </div>
+                </div> -->
                 <!-- <div class="form-group">
                     <label>Mô tả</label>
                     <TinyMce v-model="objData.description" />
@@ -69,7 +67,7 @@
                         </vs-select>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <!-- <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputName1">Hiển thị trang chủ</label>
                       <vs-select v-model="objData.home_status"
@@ -78,7 +76,7 @@
                           <vs-select-item  value="0" text="Ẩn" />
                         </vs-select>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                   
               </form>

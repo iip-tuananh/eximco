@@ -16,7 +16,7 @@ Danh sách {{$title}}
 <main id="page-content">
    <nav class="site-breadcrumb" aria-label="breadcrumb" style="background-image: url({{asset('frontend/images/bg-breadcrumb.jpg')}})">
        <div class="container">
-           <div class="h2 text-uppercase text-white text-center">Danh mục: <span>Mặt hàng nhập khẩu</span></div>
+           <div class="h2 text-uppercase text-white text-center">Danh mục: <span>{{$title}}</span></div>
        </div>
    </nav>
    <section class="archive-product mb-3 mb-lg-5">
@@ -28,7 +28,7 @@ Danh sách {{$title}}
                            <nav aria-label="breadcrumb">
                                <ol class="breadcrumb bg-transparent px-0 mb-0 mb-md-3">
                                    <li class="breadcrumb-item"><a href="{{route('home')}}" data-wpel-link="internal">Trang chủ</a></li>
-                                   <li class="breadcrumb-item active" aria-current="page">Mặt hàng</li>
+                                   <li class="breadcrumb-item active" aria-current="page">{{$title}}</li>
                                </ol>
                            </nav>
                        </div>

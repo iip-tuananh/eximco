@@ -92,10 +92,10 @@ export default {
           name: "Mặt hàng hot",
           route_name: "",
           sub: [
-            // {
-            //   name: "Danh mục mẫu thiết kế",
-            //   path: "/product/category",
-            // },
+            {
+              name: "Danh mục mặt hàng",
+              path: "/product/category",
+            },
             {
               name: "Danh sách mặt hàng",
               path: "/product",

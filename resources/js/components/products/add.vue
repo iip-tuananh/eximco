@@ -100,7 +100,7 @@
                   <vs-select-item value="0" text="Ẩn" />
                 </vs-select>
               </div>
-              <!-- <div class="form-group">
+              <div class="form-group">
                 <label>Danh mục mặt hàng</label>
                 <vs-select
                   class="selectExample"
@@ -108,10 +108,6 @@
                   placeholder="Danh mục"
                   @change="findCategoryType()"
                 >
-                <vs-select-item
-                    value="0"
-                    text="Không danh mục"
-                  />
                   <vs-select-item
                     :value="item.id"
                     :text="JSON.parse(item.name)[0].content"
@@ -119,7 +115,7 @@
                     :key="'f' + index"
                   />
                 </vs-select>
-              </div> -->
+              </div>
               <!-- <div class="form-group">
                 <label>Loại danh mục</label>
                 <vs-select
@@ -258,7 +254,7 @@ export default {
       if(this.objData.content[0].content == '') this.errors.push('Nội dung không được để trống');
       if(this.objData.description[0].content == '') this.errors.push('Mô tả không được để trống');
       if(this.objData.images.length == 0) this.errors.push('Vui lòng chọn ảnh');
-      // if(this.objData.category == 0) this.errors.push('Chọn danh mục mặt hàng');
+      if(this.objData.category == 0) this.errors.push('Chọn danh mục mặt hàng');
       if (this.errors.length > 0) {
         this.errors.forEach((value, key) => {
           this.$error(value);

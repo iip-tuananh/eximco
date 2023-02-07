@@ -94,10 +94,31 @@
                      </ul>
                      </div>
                   </li>
-                  <li id="menu-item-7330"
+                  @if (count($categoryhome) > 0)
+                     <li
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-7387 dropdown">
+                        <a href="{{route('allProduct')}}"
+                        class="menu-item-link-class nav-link dropdown-toggle d-flex ">Mặt hàng hot <i
+                           class="fa fa-caret-down ml-1" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu">
+                        <ul class="containermenu megamenu-background sub-menu dropdown-content">
+                           @foreach ($categoryhome as $cate)
+                           <li id="menu-item-9432"
+                              class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-9432">
+                              <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}"
+                              class="menu-item-link-class ">{{languageName($cate->name)}}</a>
+                           </li>
+                           @endforeach
+                        </ul>
+                        </div>
+                     </li>
+                  @else
+                     <li id="menu-item-7330"
                      class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-7330"><a
                      href="{{route('allProduct')}}"
-                     class="menu-item-link-class nav-link ">Mặt hàng hot</a></li>
+                     class="menu-item-link-class nav-link ">Mặt hàng hot</a>
+                     </li>
+                  @endif
                   <li id="menu-item-70"
                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nav-item menu-item-70 dropdown">
                      <a href="javascript:void(0)"

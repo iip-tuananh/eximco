@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         $data['list'] = Product::where('status',1)->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description','created_at')
         ->paginate(12);
-        $data['title'] = "Mặt hàng nhập khẩu";
+        $data['title'] = "Tất cả các mặt hàng";
         $data['content'] = 'none';
         return view('product.list',$data);
     }
