@@ -27,7 +27,7 @@ class ProductController extends Controller
         
         $data['list'] = Product::where(['status'=>1,'cate_slug'=>$danhmuc])
         ->orderBy('id','DESC')
-        ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description')
+        ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description','created_at')
         ->paginate(12);
         $data['cateno'] = Category::where('slug',$danhmuc)->first(['id','name','avatar','content','imagehome']);
         $cate_id = $data['cateno']->id;
@@ -38,7 +38,7 @@ class ProductController extends Controller
     public function allListType($danhmuc,$loaidanhmuc){
         $data['list'] = Product::where(['status'=>1,'cate_slug'=>$danhmuc,'type_slug'=>$loaidanhmuc])
             ->orderBy('id','DESC')
-            ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description')
+            ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description','created_at')
             ->paginate(12);
         $data['type'] = TypeProduct::where('slug',$loaidanhmuc)->first(['id','name','cate_id','content']);
         $cate_id = $data['type']->cate_id;

@@ -1,3 +1,99 @@
+@if ( Route::currentRouteName() != 'lienHe')
+   <section class="home-contact">
+      <div class="container">
+         <div class="page-heading wow fadeInDown" data-wow-duration="1.5s"
+            style="visibility: hidden; animation-duration: 1.5s; animation-name: none;">
+            <h2 class="text-uppercase">liên hệ chúng tôi</h2>
+         </div>
+         <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0 wow fadeInLeft" data-wow-duration="1s"
+                  style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                  <div class="home-contact__img"> <noscript><img alt="dịch vụ"
+                              style="width: 100%; height: auto;"
+                              data-src="{{asset('frontend/images/contact-img.png')}}"
+                              class="lazyload"
+                              src="{{asset('frontend/images/contact-img.png')}}" /><noscript><img
+                                 src="h{{asset('frontend/images/contact-img.png')}}"
+                                 alt="dịch vụ" style="width: 100%; height: auto;" /></noscript><img
+                              class="lazyload"
+                              src="{{asset('frontend/images/contact-img.png')}}"
+                              data-src="{{asset('frontend/images/contact-img.png')}}"
+                              alt="dịch vụ" style="width: 100%; height: auto;"></div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s"
+                  style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+                  <div class="d-flex align-items-center h-100 home-contact__form">
+                     <div role="form" class="wpcf7" id="wpcf7-f6743-o2" lang="vi" dir="ltr">
+                        <div class="screen-reader-response">
+                              <p role="status" aria-live="polite" aria-atomic="true"></p>
+                              <ul></ul>
+                        </div>
+                        <form action="{{route('postcontact')}}" method="POST" class="wpcf7-form init"
+                              novalidate="novalidate" data-status="init">
+                              @csrf
+                              <div class="home-contact__content">
+                                 <div class="page-heading">
+                                    <h2 class="text-uppercase">Yêu cầu báo giá</h2>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col-12">
+                                          <div class="form-group"> <span
+                                                class="wpcf7-form-control-wrap your-name"><input type="text"
+                                                      name="name" value="" size="40"
+                                                      class="wpcf7-form-control wpcf7-text form-control"
+                                                      aria-invalid="false" placeholder="Nhập họ tên" required></span></div>
+                                    </div>
+                                    <div class="col-12">
+                                          <div class="form-group"> <span
+                                                class="wpcf7-form-control-wrap your-email"><input type="text"
+                                                      name="email" value="" size="40"
+                                                      class="wpcf7-form-control wpcf7-text form-control"
+                                                      aria-invalid="false"
+                                                      placeholder="Nhập địa chỉ email" required></span></div>
+                                    </div>
+                                    <div class="col-12">
+                                          <div class="form-group"> <span
+                                                class="wpcf7-form-control-wrap your-tel"><input type="number"
+                                                      name="phone" value="" size="40"
+                                                      class="wpcf7-form-control wpcf7-text form-control"
+                                                      aria-invalid="false"
+                                                      placeholder="Nhập số điện thoại" required></span></div>
+                                    </div>
+                                    <div class="col-12">
+                                          <div class="form-group"> <span
+                                                class="wpcf7-form-control-wrap your-address"><input
+                                                      type="text" name="location" value=""
+                                                      size="40"
+                                                      class="wpcf7-form-control wpcf7-text form-control"
+                                                      aria-invalid="false" placeholder="Nhập địa chỉ" required></span>
+                                          </div>
+                                    </div>
+                                    <div class="col-12">
+                                          <div class="form-group"> 
+                                             <span class="wpcf7-form-control-wrap your-subject"><input
+                                                      type="text" name="mess" value=""
+                                                      size="40"
+                                                      class="wpcf7-form-control wpcf7-text form-control"
+                                                      aria-invalid="false"
+                                                      placeholder="Thông tin cần báo giá">
+                                             </span>
+                                          </div>
+                                    </div>
+                                    <div class="col-12"> <button class="btn btn-gradient w-100"
+                                             type="submit">Gửi</button></div>
+                                 </div>
+                              </div><input type="hidden" class="wpcf7-pum"
+                                 value="{&quot;closepopup&quot;:false,&quot;closedelay&quot;:0,&quot;openpopup&quot;:false,&quot;openpopup_id&quot;:0}">
+                              <div class="wpcf7-response-output" aria-hidden="true"></div><input
+                                 class="js_cookies" name="_cookies" style="display: none;">
+                        </form>
+                     </div>
+                  </div>
+            </div>
+         </div>
+      </div>
+   </section>
+@endif
 <footer>
    <div class="text-center"><a class="go-top js-go-top show" id="go-top"
          title="back to top" rel="nofollow noopener" data-wpel-link="internal"><i class="fa fa-arrow-up"></i></a>
@@ -5,120 +101,119 @@
    <div class="page-footer">
       <div class="container">
          <div class="row">
-         <div class="col-lg-3">
-            <div class="page-footer-info mb-4 mb-lg-0">
-               <h4 class="mb-3 page-footer__header">Tại Hà Nội</h4>
-                  @foreach (json_decode($setting->address1) as $item)
-                  @if ($item->name != "")
-                     <p class="mb-2 mb-md-3">{{$item->name}}</p>
+            <div class="col-lg-3 mt-3 mt-md-0">
+               @if ($setting->facebook !==null)
+                  <h4 class="mb-4 page-footer__header">fanpage</h4>
+                  <div class="fb-page" data-href="{{$setting->facebook}}"
+                  data-width="" data-height="" data-small-header="false"
+                  data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                  </div>
+               @endif
+               <div class="page-footer-info mb-4 mt-4 mb-lg-0">
+                  <h4 class="mb-3 page-footer__header">Liên hệ</h4>
+                  @if ($setting->phone1)
+                  <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline : <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></p>
                   @endif
-                  @if ($item->name_code != "")
-                     <p class="mb-2 mb-md-3">Mã code : {{$item->name}}</p>
+                  @if ($setting->phone2)
+                  <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline 2: <a href="tel:{{$setting->phone2}}">{{$setting->phone2}}</a></p>
                   @endif
-                  <p class="mb-2 mb-md-3">
-                     @if ($item->address != "")
-                     <i class="fa fa-home mr-2"></i>Văn Phòng: {{$item->address}}<br>
+                  @if ($setting->email)
+                  <p class="mb-2 mb-md-3"><i class="fa fa-envelope mr-2"></i>Email: <a href="mailto:{{$setting->email}}">{{$setting->email}}</a>
+                  </p>
+                  @endif
+                  <p class="mb-2 mb-md-3"><i class="fa fa-clock mr-2"></i>Giờ Làm Việc: 8:00-11:30 &amp; 13:30-17:00 Thứ
+                  2 - Thứ 7</p>
+               </div>
+            </div>
+            <div class="col-lg-3 mt-3 mt-md-0">
+               <h4 class="mb-4 page-footer__header">Bản đồ</h4>
+               {!!$setting->iframe_map!!}
+            </div>
+            <div class="col-lg-3">
+               <div class="page-footer-info mb-4 mb-lg-0">
+                  <h4 class="mb-3 page-footer__header">Tại Hà Nội</h4>
+                     @foreach (json_decode($setting->address1) as $item)
+                     @if ($item->name != "")
+                        <p class="mb-2 mb-md-3">{{$item->name}}</p>
+                     @endif
+                     @if ($item->name_code != "")
+                        <p class="mb-2 mb-md-3">Mã code : {{$item->name}}</p>
+                     @endif
+                     <p class="mb-2 mb-md-3">
+                        @if ($item->address != "")
+                        <i class="fa fa-home mr-2"></i>Văn Phòng: {{$item->address}}<br>
+                        @endif
+                        @if ($item->phone_number != "")
+                        <i class="fa fa-phone mr-2"></i>Hotline : {{$item->phone_number}}
+                        @endif
+                     </p>
+                     @endforeach
+               </div>
+               <div class="page-footer-info mb-4 mb-lg-0">
+                  <h4 class="mb-3 page-footer__header">Tại Quảng Châu, Trung Quốc</h4>
+                  @foreach (json_decode($setting->address2) as $item)
+                     @if ($item->name != "")
+                        <p class="mb-2 mb-md-3">
+                           {{$item->name}}
+                        </p>
+                     @endif
+                     @if ($item->name_code != "")
+                        <p class="mb-2 mb-md-3">
+                           收货名： {{$item->name_code}}
+                        </p>
                      @endif
                      @if ($item->phone_number != "")
-                     <i class="fa fa-phone mr-2"></i>Hotline : {{$item->phone_number}}
+                        <p class="mb-2 mb-md-3">
+                           电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
+                        </p>
                      @endif
-                  </p>
+                     @if ($item->address != "")
+                        <p class="mb-2 mb-md-3">
+                           收货地址：{{$item->address}}
+                        </p>
+                     @endif
+                     @if ($item->note != "")
+                        <p class="mb-2 mb-md-3">
+                           请标注外箱大写: {{$item->note}}
+                        </p>
+                     @endif
                   @endforeach
-            </div>
-            <div class="page-footer-info mb-4 mb-lg-0">
-               <h4 class="mb-3 page-footer__header">Tại Quảng Châu, Trung Quốc</h4>
-               @foreach (json_decode($setting->address2) as $item)
-                  @if ($item->name != "")
-                     <p class="mb-2 mb-md-3">
-                        {{$item->name}}
-                     </p>
-                  @endif
-                  @if ($item->name_code != "")
-                     <p class="mb-2 mb-md-3">
-                        收货名： {{$item->name_code}}
-                     </p>
-                  @endif
-                  @if ($item->phone_number != "")
-                     <p class="mb-2 mb-md-3">
-                        电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
-                     </p>
-                  @endif
-                  @if ($item->address != "")
-                     <p class="mb-2 mb-md-3">
-                        收货地址：{{$item->address}}
-                     </p>
-                  @endif
-                  @if ($item->note != "")
-                     <p class="mb-2 mb-md-3">
-                        请标注外箱大写: {{$item->note}}
-                     </p>
-                  @endif
-               @endforeach
-            </div>
-         </div>
-         <div class="col-lg-3">
-            <div class="mb-4 mb-lg-0">
-               <h4 class="mb-3 page-footer__address">
-                  Tại Bằng Tường, Trung Quốc
-               </h4>
-               @foreach (json_decode($setting->address3) as $item)
-                  @if ($item->name != "")
-                     <p class="mb-2 mb-md-3">
-                        {{$item->name}}
-                     </p>
-                  @endif
-                  @if ($item->name_code != "")
-                     <p class="mb-2 mb-md-3">
-                        收货名： {{$item->name_code}}
-                     </p>
-                  @endif
-                  @if ($item->phone_number != "")
-                     <p class="mb-2 mb-md-3">
-                        电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
-                     </p>
-                  @endif
-                  @if ($item->address != "")
-                     <p class="mb-2 mb-md-3">
-                        收货地址：{{$item->address}}
-                     </p>
-                  @endif
-                  @if ($item->note != "")
-                     <p class="mb-2 mb-md-3">
-                        请标注外箱大写: {{$item->note}}
-                     </p>
-                  @endif
-               @endforeach
-            </div>
-         </div> 
-         <div class="col-lg-3 mt-3 mt-md-0">
-            @if ($setting->facebook !==null)
-               <h4 class="mb-4 page-footer__header">fanpage</h4>
-               <div class="fb-page" data-href="{{$setting->facebook}}"
-               data-width="" data-height="" data-small-header="false"
-               data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                </div>
-            @endif
-            <div class="page-footer-info mb-4 mt-4 mb-lg-0">
-               <h4 class="mb-3 page-footer__header">Liên hệ</h4>
-               @if ($setting->phone1)
-               <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline : <a href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a></p>
-               @endif
-               @if ($setting->phone2)
-               <p class="mb-2 mb-md-3"><i class="fa fa-phone mr-2"></i>Hotline 2: <a href="tel:{{$setting->phone2}}">{{$setting->phone2}}</a></p>
-               @endif
-               @if ($setting->email)
-               <p class="mb-2 mb-md-3"><i class="fa fa-envelope mr-2"></i>Email: <a href="mailto:{{$setting->email}}">{{$setting->email}}</a>
-               </p>
-               @endif
-               <p class="mb-2 mb-md-3"><i class="fa fa-clock mr-2"></i>Giờ Làm Việc: 8:00-11:30 &amp; 13:30-17:00 Thứ
-               2 - Thứ 7</p>
             </div>
-         </div>
-         <div class="col-lg-3 mt-3 mt-md-0">
-            <h4 class="mb-4 page-footer__header">Bản đồ</h4>
-            {!!$setting->iframe_map!!}
-         </div>
-
+            <div class="col-lg-3">
+               <div class="mb-4 mb-lg-0">
+                  <h4 class="mb-3 page-footer__address">
+                     Tại Bằng Tường, Trung Quốc
+                  </h4>
+                  @foreach (json_decode($setting->address3) as $item)
+                     @if ($item->name != "")
+                        <p class="mb-2 mb-md-3">
+                           {{$item->name}}
+                        </p>
+                     @endif
+                     @if ($item->name_code != "")
+                        <p class="mb-2 mb-md-3">
+                           收货名： {{$item->name_code}}
+                        </p>
+                     @endif
+                     @if ($item->phone_number != "")
+                        <p class="mb-2 mb-md-3">
+                           电话 : <a href="tel:{{$item->phone_number}}"> {{$item->phone_number}} </a>
+                        </p>
+                     @endif
+                     @if ($item->address != "")
+                        <p class="mb-2 mb-md-3">
+                           收货地址：{{$item->address}}
+                        </p>
+                     @endif
+                     @if ($item->note != "")
+                        <p class="mb-2 mb-md-3">
+                           请标注外箱大写: {{$item->note}}
+                        </p>
+                     @endif
+                  @endforeach
+               </div>
+            </div> 
          </div>
       </div>
    </div>

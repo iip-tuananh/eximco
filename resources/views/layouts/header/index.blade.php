@@ -1,25 +1,14 @@
 <header class="page-header">
    <div class="page-topbar py-1 py-sm-2">
       <div class="container">
-         {{-- <div class="row">
-         <div class="col-lg-12 col-md-8">
-            <div class="page-topbar-left text-center text-md-left mb-2 mb-md-0 d-flex">
-               <p class="text-white mb-0"><i class="fa fa-map mr-2"></i>{{$setting->address1}}
-               </p>
-               <p class="text-white mb-0 ml-3"><i class="fa fa-phone mr-2"></i>
-                  <a class="page-phone" href="tel:{{$setting->phone1}}">{{$setting->phone1}}</a>
-               </p>
-            </div>
-         </div>
-         </div> --}}
       </div>
    </div>
    <div class="page-topbar-bottom">
       <div class="container">
          <div class="d-flex align-items-center justify-content-between flex-column flex-md-row">
             <div class="page-menu-logo d-none d-lg-block">
-               <a class="navbar-brand d-block mx-auto mx-md-0 page-logo mr-auto" href="" title="{{$setting->company}}" data-wpel-link="internal">
-                  <img class="page-img-lap" src="{{$setting->logo}}" alt="" srcset="">
+               <a class="navbar-brand d-block mx-auto mx-md-0 page-logo mr-auto" href="{{route('home')}}" title="{{$setting->company}}" data-wpel-link="internal">
+                  <img class="page-img-lap" src="{{$setting->logo}}" alt="logo">
                </a>
             </div>
             <div class="page-search"></div>
